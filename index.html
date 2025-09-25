@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Космический Кот: Гравитационные Гонки</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Comic+Neue:wght@700&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bruno+Ace+SC&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+    <!-- Обновленный HTML для стартового меню -->
+    <div id="start-menu" class="screen visible">
+        <!-- Космический фон с планетами -->
+        <div class="space-bg">
+            <div class="planet big-planet"></div>
+            <div class="planet small-planet"></div>
+            <div class="stars-layer"></div>
+            <div class="cosmic-dust"></div>
+        </div>
+
+        <!-- Главный заголовок -->
+        <div class="main-title">
+            <span class="title-word cosmic">КОСМИЧЕСКИЙ</span>
+            <span class="title-word cat">КОТ</span>
+        </div>
+
+        <!-- Подзаголовок -->
+        <div class="subtitle">
+            <div class="subtitle-line"></div>
+            <span>Путь звёздной вероятности</span>
+            <div class="subtitle-line"></div>
+        </div>
+
+        <!-- Контент меню -->
+        <div class="menu-content">
+            <img src="img/cat2.png" alt="Космический кот" class="cat-hero">
+
+            <!-- Кнопки меню -->
+            <div class="menu-buttons">
+                <button id="start-btn" class="menu-btn start-btn">
+                    <span class="btn-ico">🚀</span>
+                    <span class="btn-text">Начать игру</span>
+                    <span class="btn-pulse"></span>
+                </button>
+
+                <!-- <button class="menu-btn">
+                <span class="btn-ico">🎯</span>
+                <span class="btn-text">Миссии</span>
+            </button> -->
+
+                <button class="menu-btn" id="tutorial-btn">
+                    <span class="btn-ico">📖</span>
+                    <span class="btn-text">Обучение</span>
+                </button>
+
+                <button class="menu-btn" id="github-btn">
+                    <span class="btn-ico">💻</span>
+                    <span class="btn-text">GitHub</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Эффекты -->
+        <div class="menu-effects">
+            <div class="light-spot"></div>
+            <div class="particles"></div>
+        </div>
+    </div>
+    <!-- Добавьте этот код после стартового меню в index.html -->
+    <div id="level-select" class="screen hidden">
+        <!-- Космический фон -->
+        <div class="space-bg">
+            <div class="planet big-planet"></div>
+            <div class="planet small-planet"></div>
+            <div class="stars-layer"></div>
+            <div class="cosmic-dust"></div>
+        </div>
+
+        <!-- Заголовок -->
+        <div class="level-title">
+            <span>Карта Вероятностной Экспедиции</span>
+            <div class="title-highlight"></div>
+        </div>
+
+        <!-- Контейнер карты -->
+        <!-- Обновлённый раздел galaxy-map в level-select -->
+        <div class="galaxy-map">
+            <!-- Путь между уровнями (оставляем как было) -->
+            <svg class="level-path" viewBox="0 0 1000 500" preserveAspectRatio="none">
+                <path d="M100,250 C300,150 500,350 700,250 C900,150 1100,350 1300,250" stroke="#4cc9f0" stroke-width="4"
+                    fill="none" stroke-dasharray="10 5" />
+            </svg>
+
+            <!-- Уровни с изображениями -->
+            <div class="level-planet" data-level="1" style="left: 15%; top: 50%">
+                <div class="level-image" style="background-image: url('img/planet1.png')"></div>
+                <div class="level-info">
+                    <h3>Кубик Галактики</h3>
+                    <p>Изучай вероятность с космическим кубиком!</p>
+                    <div class="level-lock"></div>
+                </div>
+            </div>
+
+            <div class="level-planet locked" data-level="2" style="left: 35%; top: 30%">
+                <div class="level-image" style="background-image: url('img/planet2.png')"></div>
+                <div class="level-info">
+                    <h3>Монетный Барьер</h3>
+                    <p>Пройди через барьер, используя вероятность!</p>
+                    <div class="level-lock">🔒</div>
+                </div>
+            </div>
+
+            <div class="level-planet locked" data-level="3" style="left: 55%; top: 60%">
+                <div class="level-image" style="background-image: url('img/planet3.png')"></div>
+                <div class="level-info">
+                    <h3>Шариковая Рулетка</h3>
+                    <p>Изучай комбинаторику и зависимые события!</p>
+                    <div class="level-lock">🔒</div>
+                </div>
+            </div>
+
+            <div class="level-planet locked" data-level="4" style="left: 75%; top: 25%">
+                <div class="level-image" style="background-image: url('img/planet4.png')"></div>
+                <div class="level-info">
+                    <h3>Космический Генератор Планет</h3>
+                    <p>Исследуй вероятность через сканирование планет!</p>
+                    <div class="level-lock">🔒</div>
+                </div>
+            </div>
+
+            <div class="level-planet locked secret" data-level="5" style="left: 90%; top: 70%">
+                <div class="level-image" style="background-image: url('img/planet5.png')"></div>
+                <div class="level-info">
+                    <h3>Квантовый Генератор Звёзд</h3>
+                    <p>Открой закон больших чисел!</p>
+                    <div class="level-lock">🔒</div>
+                </div>
+            </div>
+        </div>
+        <!-- Кот-проводник -->
+        <img src="img/cat2.png" alt="Космический кот" class="map-cat" id="map-cat">
+
+        <!-- Кнопка назад -->
+        <button id="back-to-menu" class="map-btn">
+            <span class="btn-ico">←</span>
+            <span class="btn-text">В главное меню</span>
+        </button>
+    </div>
+    <!-- Добавьте этот код перед закрывающим тегом </body> в index.html -->
+    <div id="tutorial-menu" class="screen hidden">
+        <!-- Космический фон -->
+        <div class="space-bg">
+            <div class="planet big-planet"></div>
+            <div class="planet small-planet"></div>
+            <div class="stars-layer"></div>
+            <div class="cosmic-dust"></div>
+        </div>
+
+        <!-- Заголовок -->
+        <div class="level-title cosmic-title">
+            <span>🌌 Космический учебник вероятности 🌠</span>
+            <div class="title-highlight cosmic-highlight"></div>
+        </div>
+
+        <!-- Контейнер с конспектом -->
+        <div class="tutorial-container">
+            <div class="tutorial-content">
+                <!-- Секция 1 -->
+                <div class="tutorial-section cosmic-card" id="basics">
+                    <div class="section-header">
+                        <h2>📚 Основы вероятности</h2>
+                        <div class="section-icon">✨</div>
+                    </div>
+                    <div class="section-content">
+                        <p>Вероятность - это шанс, что что-то случится. Измеряется от 0 (никогда) до 1 (точно).</p>
+                        <div class="cosmic-example">
+                            <p>Пример: вероятность выпадения орла при броске монетки = 0.5 (50%)</p>
+                            <div class="cosmic-formula">
+                                P(событие) = Число благоприятных исходов / Всего возможных исходов
+                            </div>
+                        </div>
+                    </div>
+                    <div class="section-footer">
+                        <div class="cosmic-tag">#основы</div>
+                    </div>
+                </div>
+
+                <!-- Секция 2 -->
+                <div class="tutorial-section cosmic-card" id="dice">
+                    <div class="section-header">
+                        <h2>🎲 Вероятность с кубиком</h2>
+                        <div class="section-icon">⚡</div>
+                    </div>
+                    <div class="section-content">
+                        <p>У кубика 6 граней. Вероятность выпадения любой конкретной грани = 1/6.</p>
+                        <p>Вероятность выпадения чётного числа: 3/6 = 0.5 (3 чётных числа: 2,4,6)</p>
+                        <div class="cosmic-example">
+                            <p>Пример задачи: Какова вероятность выпадения числа больше 4?</p>
+                            <div class="cosmic-answer">
+                                <span>Ответ:</span> 2/6 = 1/3 (числа 5 и 6)
+                            </div>
+                        </div>
+                    </div>
+                    <div class="section-footer">
+                        <div class="cosmic-tag">#кубики</div>
+                    </div>
+                </div>
+
+                <!-- Секция 3 -->
+                <div class="tutorial-section cosmic-card" id="coins">
+                    <div class="section-header">
+                        <h2>💲 Подбрасывание монетки</h2>
+                        <div class="section-icon">🌀</div>
+                    </div>
+                    <div class="section-content">
+                        <p>У монетки 2 стороны: орёл и решка. Вероятность каждой = 0.5.</p>
+                        <p>Каждый бросок независим - предыдущие броски не влияют на следующий!</p>
+                        <div class="cosmic-example">
+                            <div class="cosmic-formula">
+                                0.5 × 0.5 = 0.25 (25%)
+                            </div>
+                            <p>Вероятность двух орлов подряд</p>
+                        </div>
+                    </div>
+                    <div class="section-footer">
+                        <div class="cosmic-tag">#монетки</div>
+                    </div>
+                </div>
+
+                <!-- Секция 4 -->
+                <div class="tutorial-section cosmic-card" id="combinations">
+                    <div class="section-header">
+                        <h2>🔢 Комбинаторика</h2>
+                        <div class="section-icon">🌪️</div>
+                    </div>
+                    <div class="section-content">
+                        <p>Изучает, сколько разных комбинаций можно составить.</p>
+                        <div class="cosmic-example">
+                            <p>В урне 3 красных и 2 синих шара. Сколько способов вытащить 1 красный и 1 синий?</p>
+                            <div class="cosmic-answer">
+                                <span>Ответ:</span> 3 × 2 = 6 способов
+                            </div>
+                        </div>
+                    </div>
+                    <div class="section-footer">
+                        <div class="cosmic-tag">#комбинации</div>
+                    </div>
+                </div>
+
+                <!-- Секция 5 -->
+                <div class="tutorial-section cosmic-card" id="dependent">
+                    <div class="section-header">
+                        <h2>🔗 Зависимые события</h2>
+                        <div class="section-icon">💫</div>
+                    </div>
+                    <div class="section-content">
+                        <p>Когда одно событие влияет на другое. Пример: вытаскиваем шары из урны без возвращения.</p>
+                        <div class="cosmic-example">
+                            <p>В урне 3 синих и 2 красных шара. Какова вероятность вытащить 2 синих подряд?</p>
+                            <div class="cosmic-formula">
+                                1-й шар: 3/5<br>
+                                2-й шар: 2/4<br>
+                                Итого: 3/5 × 2/4 = 6/20 = 0.3 (30%)
+                            </div>
+                        </div>
+                    </div>
+                    <div class="section-footer">
+                        <div class="cosmic-tag">#зависимость</div>
+                    </div>
+                </div>
+
+                <!-- Секция 6 -->
+                <div class="tutorial-section cosmic-card" id="large-numbers">
+                    <div class="section-header">
+                        <h2>🌌 Закон больших чисел</h2>
+                        <div class="section-icon">🌠</div>
+                    </div>
+                    <div class="section-content">
+                        <p>Чем больше попыток, тем ближе результаты к теоретической вероятности.</p>
+                        <div class="cosmic-example">
+                            <p>Если подбросить монетку 10 раз, может выпасть 7 орлов. Но если 1000 раз - орлов будет
+                                около 500.</p>
+                        </div>
+                    </div>
+                    <div class="section-footer">
+                        <div class="cosmic-tag">#законы</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Кнопка назад -->
+        <button id="back-to-menu-from-tutorial" class="cosmic-btn">
+            <span class="btn-ico">←</span>
+            <span class="btn-text">В главное меню</span>
+        </button>
+        <img src="img/cat2.png" alt="Космический кот-учитель" class="tutorial-cat" width="300">
+    </div>
+    <div class="stars" id="stars"></div>
+    <script src="game.js"></script>
+</body>
+
+</html>
